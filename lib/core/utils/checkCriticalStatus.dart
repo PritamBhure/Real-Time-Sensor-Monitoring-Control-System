@@ -21,3 +21,6 @@ bool checkCriticalStatus(String id, double value) {
   // Default Fallback
   return value > 90.0;
 }
+
+
+

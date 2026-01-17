@@ -19,6 +19,8 @@ class SensorController extends ChangeNotifier {
   Map<String, List<FlSpot>> get history => _history;
 
 
+
+
   // Helper function (same as in UI)
   bool _isCritical(SensorModel s) {
   if (s.id.contains("TEMP")) return s.value > 80.0;
