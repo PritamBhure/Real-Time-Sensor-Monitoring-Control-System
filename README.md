@@ -1,14 +1,5 @@
-Here are the step-by-step instructions and content for your README.md file.
-This README is written to be professional and clear, explaining exactly what the project does, how to set it up, and the technical details of how it works (MVC architecture, WebSockets, Provider).
-Instructions
-1.	Go to your project's root folder (the same folder where pubspec.yaml is).
-2.	Create a new file named README.md.
-3.	Copy the code block below and paste it into that file.
-4.	Save and push to GitHub.
-________________________________________
-Copy This Content for README.md
 Markdown
- 🏭 Real-Time Industrial Sensor Monitoring System
+🏭 Real-Time Industrial Sensor Monitoring System
 
 A robust Flutter-based Industrial IoT (IIoT) Dashboard designed to monitor critical factory sensors in real-time. This system visualizes live telemetry data, detects sensor faults (offline status), and alerts operators of critical anomalies using a high-performance  WebSocket pipeline.
 
@@ -33,7 +24,7 @@ The system follows a clean MVC (Model-View-Controller) architecture with a `Prov
 
 ```
 graph LR
-    A[Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
+    A [Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
     B -- Stream/Notify --> C{Dashboard UI};
     C -- Live Updates --> D[Sensor Cards];
     C -- Alerts --> E[Summary Header];
