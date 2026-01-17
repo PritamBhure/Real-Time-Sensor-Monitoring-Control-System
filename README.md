@@ -31,7 +31,7 @@ Core Feature
 
 The system follows a clean MVC (Model-View-Controller) architecture with a `Provider` for state management.
 
-``` mermaid
+```
 graph LR
     A[Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
     B -- Stream/Notify --> C{Dashboard UI};
@@ -48,6 +48,7 @@ graph LR
     D
     E
     end
+
 Tech Stack
 •	Frontend: Flutter (Dart)
 •	State Management: Provider
@@ -61,8 +62,7 @@ Prerequisites
 2.	Python 3.x (For the simulator)
 3.	VS Code or Android Studio
 4.	Android Emulator or Physical Device
-Step 1: Setup the Sensor Simulator (Backend)
-We use a Python script to mimic a real factory server.
+Step 1: Setup the Sensor Simulator (Backend) We use a Python script to mimic a real factory server.
 1.	Open a terminal in the root project folder.
 2.	Install the required Python library:
 Bash
@@ -71,6 +71,7 @@ pip install websockets
 Bash
 python sensor_sim.py
 Output: Sensor Simulator running on ws://0.0.0.0:8080
+
 Step 2: Setup the Flutter App
 1.	Open the Flutter project in your IDE.
 2.	Install dependencies:
@@ -89,12 +90,14 @@ The sensor_sim.py script acts as a WebSocket server. Every second, it:
 •	Generates random values for 6 different sensor types (TEMP, PRES, VOLT, VIBE, FLOW, HUMI).
 •	Encodes this data into JSON.
 •	Broadcasts it to all connected clients (the Flutter app).
+
 2. The Listener (Flutter Controller)
 The SensorController creates a persistent WebSocket connection.
 •	Stream Listener: It listens for incoming messages.
 •	Deserialization: Converts JSON -> SensorModel.
 •	History Buffering: It keeps a list of the last 30 data points (List<FlSpot>) for the real-time chart.
 •	Notification: It calls notifyListeners() to update the UI instantly.
+
 3. The Intelligence (Business Logic)
 We don't just show numbers; we analyze them.
 •	Critical Checks: The app checks specific thresholds for each sensor type (e.g., Vibration > 4.0 mm/s is dangerous).
