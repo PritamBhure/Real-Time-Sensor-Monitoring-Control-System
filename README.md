@@ -31,8 +31,7 @@ Core Feature
 
 The system follows a clean MVC (Model-View-Controller) architecture with a `Provider` for state management.
 
-```
-
+``` mermaid
 graph LR
     A[Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
     B -- Stream/Notify --> C{Dashboard UI};
