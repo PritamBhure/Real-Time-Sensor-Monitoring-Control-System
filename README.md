@@ -1,3 +1,12 @@
+Here are the step-by-step instructions and content for your README.md file.
+This README is written to be professional and clear, explaining exactly what the project does, how to set it up, and the technical details of how it works (MVC architecture, WebSockets, Provider).
+Instructions
+1.	Go to your project's root folder (the same folder where pubspec.yaml is).
+2.	Create a new file named README.md.
+3.	Copy the code block below and paste it into that file.
+4.	Save and push to GitHub.
+________________________________________
+Copy This Content for README.md
 Markdown
  🏭 Real-Time Industrial Sensor Monitoring System
 
@@ -22,8 +31,9 @@ Core Feature
 
 The system follows a clean MVC (Model-View-Controller) architecture with a `Provider` for state management.
 
+```mermaid
 graph LR
-    A [Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
+    A[Python Simulator] -- JSON over WebSocket --> B(Flutter Controller);
     B -- Stream/Notify --> C{Dashboard UI};
     C -- Live Updates --> D[Sensor Cards];
     C -- Alerts --> E[Summary Header];
@@ -51,10 +61,8 @@ Prerequisites
 2.	Python 3.x (For the simulator)
 3.	VS Code or Android Studio
 4.	Android Emulator or Physical Device
-
 Step 1: Setup the Sensor Simulator (Backend)
 We use a Python script to mimic a real factory server.
-
 1.	Open a terminal in the root project folder.
 2.	Install the required Python library:
 Bash
@@ -63,9 +71,7 @@ pip install websockets
 Bash
 python sensor_sim.py
 Output: Sensor Simulator running on ws://0.0.0.0:8080
-
 Step 2: Setup the Flutter App
-
 1.	Open the Flutter project in your IDE.
 2.	Install dependencies:
 Bash
